@@ -34,6 +34,12 @@ function App() {
       });
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      searchPokemon();
+    }
+  }
+
   return (
     <div className="App">
       <div className="TitleSection">
@@ -44,6 +50,7 @@ function App() {
           onChange={(event) => {
             setPokemonName(event.target.value);
           }}
+          onKeyDown={handleKeyDown}
         />
         <button onClick={searchPokemon}>Search Pokemon</button>
       </div>
